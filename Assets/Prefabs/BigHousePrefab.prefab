@@ -176,6 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 490262}
   - component: {fileID: 3214599031184857238}
+  - component: {fileID: 6454614339608910065}
   m_Layer: 0
   m_Name: BigHousePrefab
   m_TagString: Untagged
@@ -196,6 +197,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4518580406807574007}
   - {fileID: 429724}
   - {fileID: 478734}
   - {fileID: 408566}
@@ -242,6 +244,21 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 8
+  rotateSpeed: 60
+--- !u!114 &6454614339608910065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103614}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0195f23f5559eed4b9c618cf8ca8faa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  car: {fileID: 7085460630238156685, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
+  time: 5
 --- !u!1 &107994
 GameObject:
   m_ObjectHideFlags: 0
@@ -2489,3 +2506,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &968080256106816798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4518580406807574007}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4518580406807574007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968080256106816798}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 490262}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

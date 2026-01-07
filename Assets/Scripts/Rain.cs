@@ -29,7 +29,7 @@ public class Rain : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(UnityEngine.Random.RandomRange(10f, 15f));
+            yield return new WaitForSeconds(Random.Range(10f, 15f));
             if (_isRain)
             {
                 _ps.Stop();

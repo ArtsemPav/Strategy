@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SelectController : MonoBehaviour
 {
@@ -19,8 +20,22 @@ public class SelectController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetMouseButtonDown(1) && players.Count>0)
+        {
+            Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out RaycastHit agentTarget, 1000f, layer))
+            {
+                foreach (var element in players)
+                    element.GetComponent<NavMeshAgent>().SetDestination(agentTarget.point);
+            }
+        }
+
         if(Input.GetMouseButtonDown(0))
         {
+            foreach (var element in players)
+                element.transform.GetChild(0).gameObject.SetActive(false);
+
             players.Clear();
             Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
 
@@ -61,7 +76,9 @@ public class SelectController : MonoBehaviour
 
             foreach (var element in hits)
             {
+                if (element.collider.CompareTag("Enemy")) continue;
                 players.Add(element.transform.gameObject);
+                element.transform.GetChild(0).gameObject.SetActive(true);
             }
             Destroy(_cubeselection);
         }
