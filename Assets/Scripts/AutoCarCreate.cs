@@ -26,6 +26,7 @@ public class AutoCarCreate : MonoBehaviour
             GameObject spawn = Instantiate(car, pos, Quaternion.identity);
             if (IsEnemy)
                 spawn.tag = "Enemy";
+            else spawn.tag = "Player";
 
         }
     }
